@@ -29,12 +29,14 @@ public class ProductService {
                 .build();
 
         productRepository.save(product);
+        System.out.println("This is in service create");
         log.info("Product {} is saved",product.getId());
     }
 
 
     public List<ProductResponse> getAllProducts() {
         List<Product> products= productRepository.findAll();
+        System.out.println("This is in service get");
         return products.stream().map(this::mapToProductResponse).collect(Collectors.toList());
 
     }

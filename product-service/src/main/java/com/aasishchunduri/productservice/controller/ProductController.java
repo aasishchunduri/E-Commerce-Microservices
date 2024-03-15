@@ -28,6 +28,7 @@ productService.createProduct(productRequest);
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<ProductResponse> getAllProducts(){
+        System.out.println("Coming here in get");
         return productService.getAllProducts();
     }
 
